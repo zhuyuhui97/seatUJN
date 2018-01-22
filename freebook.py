@@ -39,10 +39,10 @@ def get_seat_id(loc, token):
 '''
 http://seat.ujn.edu.cn/rest/auth?username=220140421164&password=220140421164
 获取token                                    
-```json
+
 {"status":"success","data":{"token":"T58UTCARF601204212"},"code":"0","message":""}
 {"status":"fail","code":"13","message":"登录失败: 密码不正确","data":null}
-```
+
 '''
 
 
