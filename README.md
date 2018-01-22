@@ -13,12 +13,15 @@ api是从Android端抓包获取
 >windows
 
 先写一个批处理执行python脚本
+
 ```bat
 f:
 cd F:\作业同步文件夹\seatUJN
 python freebook.py
 ```
+
 然后设置计划任务
+
 ![](http://p1f1jwe7c.bkt.clouddn.com/18-1-22/42094914.jpg)
 ![](http://p1f1jwe7c.bkt.clouddn.com/18-1-22/69343034.jpg)
 
