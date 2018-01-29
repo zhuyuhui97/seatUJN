@@ -107,7 +107,7 @@ def get_history(token):
         return -1
     # print(resp)
     for raw in resp['data']['reservations']:
-        # 预约状态+当天+一小时内开始+预约时长大于1小时
+        # 预约状态+当天+预约时长大于1小时+已到预约时间
         # print('stat ,'+raw['stat'])
         # print('date ,'+raw['date'], nowDate)
         # print('hour ,'+str(int(raw['begin'][:2])-1) ,str(nowHour))
