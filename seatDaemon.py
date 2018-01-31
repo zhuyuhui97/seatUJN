@@ -3,6 +3,7 @@
 import requests
 import json
 import time
+import sys
 
 '''
 如果有快到时间的预约，
@@ -155,7 +156,7 @@ def get_history(token):
 if __name__ == '__main__':
     tomorrow = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
     print('    ' + tomorrow)
-    f = open('config.json', 'r', encoding='utf8')
+    f = open(sys.path[0] + '/config.json', 'r', encoding='utf8')
     info = json.load(f)
     for i in info['stu']:
         token1 = get_token(i['username'], i['password'])

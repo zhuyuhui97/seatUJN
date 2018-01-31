@@ -1,3 +1,6 @@
 .idea/
 2201*.txt
 checkPassword.py
+t.py
+*.swp
+*.log

@@ -4,6 +4,7 @@
 import requests
 import json
 import time
+import sys
 
 # 按照config.json的配置预约第二天的座位
 
@@ -89,7 +90,7 @@ def freeBook(token, startTime, endTime, seat):
 if __name__ == '__main__':
     tomorrow = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
     print('    ' + tomorrow)
-    f = open('config.json', 'r', encoding='utf8')
+    f = open(sys.path[0] + '/config.json', 'r', encoding='utf8')
     info = json.load(f)
     # print(info)
     # print(len(info['stu']))
