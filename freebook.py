@@ -87,6 +87,8 @@ def freeBook(token, startTime, endTime, seat):
 
 
 if __name__ == '__main__':
+    tomorrow = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
+    print('    ' + tomorrow)
     f = open('config.json', 'r', encoding='utf8')
     info = json.load(f)
     # print(info)

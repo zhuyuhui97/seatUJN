@@ -153,6 +153,8 @@ def get_history(token):
 
 
 if __name__ == '__main__':
+    tomorrow = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
+    print('    ' + tomorrow)
     f = open('config.json', 'r', encoding='utf8')
     info = json.load(f)
     for i in info['stu']:
