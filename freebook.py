@@ -100,4 +100,6 @@ if __name__ == '__main__':
             else:
                 status = -1
         if token != -1 and status != -1:
-            print(i['name'] + 'success！！')
+            print(i['name'] + ' 成功预约 ' + i['seat'])
+        else:
+            print(i['name'] + ' 预约失败\n')
