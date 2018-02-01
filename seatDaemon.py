@@ -147,7 +147,7 @@ def get_history(token):
                 print('续约失败  ，' + r.text)
                 return -1
             print('续约成功 ' + r.text)
-        break
+            break
     if not need_free:
         print("无需续约")
     return 1
