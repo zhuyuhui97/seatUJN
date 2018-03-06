@@ -111,11 +111,9 @@ def get_history(token):
     need_free = False
     for raw in resp['data']['reservations']:
         # 预约状态+当天+预约时长大于1小时+已到预约时间
-        # print('stat ,'+raw['stat'])
-        # print('date ,'+raw['date'], nowDate)
-        # print('hour ,'+str(int(raw['begin'][:2])-1) ,str(nowHour))
-        if raw['stat'] == 'RESERVE' and raw['date'] == nowDate and int(raw['end'][:2]) - int(
-                raw['begin'][:2]) > 1 and int(raw['begin'][:2]) - 1 == nowHour:
+        # if raw['stat'] == 'RESERVE' and raw['date'] == nowDate and int(raw['end'][:2]) - int(
+        #         raw['begin'][:2]) > 1 and int(raw['begin'][:2]) - 1 == nowHour:
+        if raw['stat'] == 'RESERVE' and raw['date'] == nowDate and int(raw['begin'][:2]) - 1 == nowHour:
             print('需要续约')
             need_free = True
             # cancle the reservation
