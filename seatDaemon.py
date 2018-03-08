@@ -47,7 +47,8 @@ def get_local_date():
 
 
 nowDate = get_local_date()
-nowHour = int(time.strftime("%H", time.localtime()))
+# nowHour = int(time.strftime("%H", time.localtime()))
+nowMinutes = time.localtime()[3] * 60 + time.localtime()[4]
 
 
 def get_token(username, password):
@@ -110,10 +111,9 @@ def get_history(token):
     # print(resp)
     need_free = False
     for raw in resp['data']['reservations']:
-        # 预约状态+当天+预约时长大于1小时+已到预约时间
-        # if raw['stat'] == 'RESERVE' and raw['date'] == nowDate and int(raw['end'][:2]) - int(
-        #         raw['begin'][:2]) > 1 and int(raw['begin'][:2]) - 1 == nowHour:
-        if raw['stat'] == 'RESERVE' and raw['date'] == nowDate and int(raw['begin'][:2]) - 1 == nowHour:
+        minutes = int(raw['begin'][:2]) * 60 + int(raw['begin'][3:])
+        # 预约状态+当天+预约30分钟内开始
+        if raw['stat'] == 'RESERVE' and raw['date'] == nowDate and minutes - nowMinutes < 30:
             print('需要续约')
             need_free = True
             # cancle the reservation
@@ -134,8 +134,8 @@ def get_history(token):
                 return -1
             param = {
                 'token': token,
-                'startTime': str((int(raw['begin'][:2]) + 1) * 60),
-                'endTime': str(int(raw['end'][:2]) * 60),
+                'startTime': str((int(raw['begin'][:2]) + 1) * 60 + int(raw['begin'][3:])),
+                'endTime': str(int(raw['end'][:2]) * 60 + int(raw['end'][3:])),
                 'seat': seat,
                 'date': nowDate
             }
