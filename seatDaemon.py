@@ -152,9 +152,13 @@ def get_history(token):
 
 
 if __name__ == '__main__':
+    if sys.argv.__len__() <= 1:
+        print("请传入配置文件名称")
+        sys.exit()  
+    filename = sys.argv[1]
     now = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
     print('----------------------' + now + '-----------------------')
-    f = open(sys.path[0] + '/config.json', 'r', encoding='utf8')
+    f = open(sys.path[0] + '/' + filename, 'r', encoding='utf8')
     info = json.load(f)
     for i in info['stu']:
         token1 = get_token(i['username'], i['password'])

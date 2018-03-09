@@ -6,7 +6,7 @@ import json
 import time
 import sys
 
-# 传入的脚本预约第二天的座位
+# 配置文件作为参数传入预约第二天的座位
 
 
 # 座位转换
