@@ -77,7 +77,8 @@ python freebook.py config.json
 
 使用`cron`设置计划任务
 ```
-* 5 5 * * ? /usr/bin/python /home/lxp/document/seatUJN/freebook.py
+5     5    *    *    2-7 /usr/bin/python3 /root/seatUJN/freebook.py config.json >> /root/seatUJN/freebook.log
+5     5    *    *    1 /usr/bin/python3 /root/seatUJN/freebook.py config2.json >> /root/seatUJN/freebook.log
 ```
 
 ### locToSeat.py
