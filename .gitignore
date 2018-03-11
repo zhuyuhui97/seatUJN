@@ -1,5 +1,4 @@
 .idea/
-*.json
 2201*.txt
 checkPassword.py
 t.py
