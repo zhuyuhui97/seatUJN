@@ -99,6 +99,8 @@ if __name__ == '__main__':
     # print(info)
     # print(len(info['stu']))
     for i in info['stu']:
+        if i['enable'] == 'false':
+            continue
         token = getToken(i['username'], i['password'])
         if token != -1:
             seat_id = get_seat_id(i['seat'], token)
