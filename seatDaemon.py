@@ -161,8 +161,6 @@ if __name__ == '__main__':
     f = open(sys.path[0] + '/' + filename, 'r', encoding='utf8')
     info = json.load(f)
     for i in info['stu']:
-        if i['enable'] == "false":
-            continue
         token1 = get_token(i['username'], i['password'])
         if token1 != -1:
             print(i['username'] + '登陆成功')
