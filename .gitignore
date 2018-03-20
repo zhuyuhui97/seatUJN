@@ -1,6 +1,7 @@
 .idea/
 *.json
 2201*.txt
+*.sh
 checkPassword.py
 t.py
 *.swp

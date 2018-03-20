@@ -38,6 +38,7 @@ if __name__ == '__main__':
     f = open(sys.path[0] + '/' + filename, 'r', encoding='utf8')
     info = json.load(f)
     for i in info['stu']:
+        print(i['name'])
         token1 = get_token(i['username'], i['password'])
         checkin(token1)
 
